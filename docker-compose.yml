@@ -1,0 +1,23 @@
+version: '3.5'
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=meinesecurepasswd
+      - POSTGRES_DB=app
+    hostname: postgres
+    ports:
+      - '5432:5432'
+  backend:
+    image: fastapi:latest
+    restart: always
+    ports:
+      - '5555:5555'
+    depends_on:
+      - db
+networks:
+  default:
+    name: fastapi
+    external: false
