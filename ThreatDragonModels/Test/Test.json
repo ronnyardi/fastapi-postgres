@@ -1,7 +1,8 @@
 {
   "summary": {
     "title": "Test",
-    "owner": "ronnyardi"
+    "owner": "ronnyardi",
+    "description": "Test description"
   },
   "detail": {
     "contributors": [],
